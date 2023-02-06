@@ -1,9 +1,25 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="container" style="color:blanchedalmond">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <router-link class="nav-link" to="/dashboard">Home</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/albums">Albums</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/photos">Photos</router-link>
+        </li>
+      </ul>
+    </div>
   </nav>
-  <router-view/>
+  </div>
+
+
+  <router-view />
 </template>
 
 <style lang="scss">

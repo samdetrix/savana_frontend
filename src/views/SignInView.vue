@@ -1,25 +1,20 @@
 <template>
-  <div class="home">
-    <SignIn v-if="showLoginDialog"/>
-<br
-/>
-    <DashBoard />
-  </div>
+    <div>
+        <SignIn v-if="showLoginDialog"/>
+    </div>
 </template>
 
 <script>
 import SignIn from '@/components/SignIn.vue'
-import DashBoard from '@/components/DashBoard.vue'
 
-export default {
-  name: 'HomeView',
+export default{
+    name: 'SignInView',
 
-  components: {
-        SignIn,
-        DashBoard
-  },
+    components: {
+        SignIn
+    },
 
-  data(){
+    data(){
       return{
           showLoginDialog: false,
       }
@@ -29,8 +24,9 @@ export default {
         // check if token is saved in local storage, if it's not, show signin dialog
         if(localStorage.getItem("access-token") == null){
             this.showLoginDialog = true
+        }else{
+            window.location.href = '/dashboard'
         }
   }
-
 }
 </script>
